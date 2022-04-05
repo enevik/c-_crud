@@ -29,20 +29,34 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.UserButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Form1
+            // UserButton
+            // 
+            this.UserButton.Location = new System.Drawing.Point(128, 275);
+            this.UserButton.Name = "UserButton";
+            this.UserButton.Size = new System.Drawing.Size(75, 23);
+            this.UserButton.TabIndex = 0;
+            this.UserButton.Text = "User";
+            this.UserButton.UseVisualStyleBackColor = true;
+            this.UserButton.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
+            this.ClientSize = new System.Drawing.Size(1067, 660);
+            this.Controls.Add(this.UserButton);
+            this.Name = "MainMenu";
             this.Text = "CRUD_SYSTEEM";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button UserButton;
     }
 }
 

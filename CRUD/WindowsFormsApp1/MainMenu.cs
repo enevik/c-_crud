@@ -20,5 +20,18 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        //button
+        private void UserButton_Click(object sender, EventArgs e)
+        {
+            //Maak een object
+            UserMenu userMenu = new UserMenu();
+            //verberg de correcte form dus MainMenu
+            this.Hide();
+            //laat de user form zien
+            userMenu.ShowDialog();
+            //sluit form dus MainMenu wordt gesloten, zo dat processor niet overbelast wordt.
+            this.Close();          
+        }
     }
 }
