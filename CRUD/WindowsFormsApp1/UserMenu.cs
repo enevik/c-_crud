@@ -12,9 +12,15 @@ namespace WindowsFormsApp1
 {
     public partial class UserMenu : Form
     {
+        
         public UserMenu()
         {
             InitializeComponent();
+        }
+
+        private void UserMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
