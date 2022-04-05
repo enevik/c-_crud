@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    class DataBaseConnection
+    public class DataBaseConnection
     {
         //database connectie met MICROSOFT SQL SERVER.
         //LET OP DIE VAN JOU KAN ANDERS ZIJN!

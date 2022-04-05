@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class UserMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,13 @@ namespace WindowsFormsApp1
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // UserMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "UserMenu";
+            this.Text = "User";
             this.ResumeLayout(false);
 
         }
@@ -45,4 +45,3 @@ namespace WindowsFormsApp1
         #endregion
     }
 }
-

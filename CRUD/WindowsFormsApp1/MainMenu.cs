@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
 
         //maak een object aan
         private DataBaseConnection a = new DataBaseConnection();
 
-        public Form1()
+        public MainMenu()
         {
             InitializeComponent();
         }
