@@ -12,15 +12,18 @@ namespace WindowsFormsApp1
 {
     public partial class UserMenu : Form
     {
+        private DataBaseConnection db = new DataBaseConnection();
+        private userController user = new userController();
         
         public UserMenu()
         {
-            InitializeComponent();
+           InitializeComponent();
         }
 
         private void UserMenu_Load(object sender, EventArgs e)
         {
-
+            db.GetConnection();
+            userGridView.DataSource = user.GetUsers();
         }
     }
 }

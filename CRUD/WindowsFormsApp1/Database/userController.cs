@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Domain;
 
-namespace WindowsFormsApp1.Database
+namespace WindowsFormsApp1
 {
     public class userController
     {
@@ -17,24 +17,23 @@ namespace WindowsFormsApp1.Database
         //TODO show list aanmaken 
 
         //laat alle lijsten zien in userlist.
-        public List<User> getUserList()
+        public List<User> GetUsers()
         {
             var userList = new List<User>();
             //maakt een connectie database
             SqlConnection con = db.GetConnection();
-            //open de con van de databased
-            con.Open();
             //SQLcommend is nodig om een query uittevoeren
-            SqlCommand query = new SqlCommand("SELECT * FROM User");
-            
+            //in c# moet je [] gebruiken als je gegevens wilt ophalen in database
+            SqlCommand query = new SqlCommand("SELECT * FROM [User]");
             //try en catch spreken voorzicht
             try
             {
-
-                SqlDataAdapter da = new SqlDataAdapter(query);
+                //er moet een connectie komen met sql connectie anders een fout melding
+                query.Connection = con;
+                //open de con van de databased
+                con.Open();
                 //Leest de data
                 SqlDataReader reader = query.ExecuteReader();
-
 
                 while (reader.Read())
                 {
@@ -53,10 +52,12 @@ namespace WindowsFormsApp1.Database
             {
                 // laat de error zien
                 MessageBox.Show("Error " + e.Message);
-                //sluit de verbinding met database
-                con.Close();
                 //daarna stuur die null
                 return null;
+            }
+            finally {
+                //sluit de verbinding met database
+                con.Close();
             }
 
             return userList;
