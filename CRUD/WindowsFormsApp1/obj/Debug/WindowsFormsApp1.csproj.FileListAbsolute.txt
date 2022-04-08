@@ -9,3 +9,5 @@ D:\c-_crud\CRUD\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResou
 D:\c-_crud\CRUD\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 D:\c-_crud\CRUD\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\c-_crud\CRUD\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\c-_crud\CRUD\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.createUser.resources
+D:\c-_crud\CRUD\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.updateUser.resources

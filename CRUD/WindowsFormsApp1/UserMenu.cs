@@ -25,5 +25,29 @@ namespace WindowsFormsApp1
             db.GetConnection();
             userGridView.DataSource = user.GetUsers();
         }
+
+        private void createButton_Click(object sender, EventArgs e)
+        {
+            //Maak een object
+            createUser createUser = new createUser();
+            //verberg de correcte form dus MainMenu
+            this.Hide();
+            //laat de user form zien
+            createUser.ShowDialog();
+            //sluit form dus MainMenu wordt gesloten, zo dat processor niet overbelast wordt.
+            this.Close();
+        }
+
+        //TODO Haal gegevens op van de tabel
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            updateUser updateUser = new updateUser();
+            //verberg de correcte form dus MainMenu
+            this.Hide();
+            //laat de user form zien
+            updateUser.ShowDialog();
+            //sluit form dus MainMenu wordt gesloten, zo dat processor niet overbelast wordt.
+            this.Close();
+        }
     }
 }

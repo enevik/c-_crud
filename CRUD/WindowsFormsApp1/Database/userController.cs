@@ -64,7 +64,7 @@ namespace WindowsFormsApp1
         }
 
 
-        public void insert()
+        public List<User> updateInsert()
         {
             SqlConnection con = db.GetConnection();
             con.Open();
@@ -75,10 +75,18 @@ namespace WindowsFormsApp1
 
                 SqlCommand insert = new SqlCommand();
                 insert.ExecuteNonQuery();
+                return null;
 
             }catch(SqlException e)
             {
+                // laat de error zien
                 MessageBox.Show("Error " + e.Message);
+                //daarna stuur die null
+                return null;
+            }
+            finally
+            {
+                //sluit de verbinding met database
                 con.Close();
             }
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-    partial class MainMenu
+    partial class updateUser
     {
         /// <summary>
         /// Required designer variable.
@@ -29,34 +29,33 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.UserButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // UserButton
+            // label1
             // 
-            this.UserButton.Location = new System.Drawing.Point(12, 36);
-            this.UserButton.Name = "UserButton";
-            this.UserButton.Size = new System.Drawing.Size(75, 23);
-            this.UserButton.TabIndex = 0;
-            this.UserButton.Text = "User";
-            this.UserButton.UseVisualStyleBackColor = true;
-            this.UserButton.Click += new System.EventHandler(this.UserButton_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(28, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Naam:";
             // 
-            // MainMenu
+            // updateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 90);
-            this.Controls.Add(this.UserButton);
-            this.Name = "MainMenu";
-            this.Text = "CRUD_SYSTEEM";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Name = "updateUser";
+            this.Text = "updateUser";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button UserButton;
+        private System.Windows.Forms.Label label1;
     }
 }
-
