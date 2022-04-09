@@ -30,14 +30,14 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
             this.createButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.postalCodeTextBox = new System.Windows.Forms.TextBox();
+            this.cityTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -52,12 +52,12 @@ namespace WindowsFormsApp1
             this.label1.Text = "Naam:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox1
+            // nameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(81, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 20);
-            this.textBox1.TabIndex = 1;
+            this.nameTextBox.Location = new System.Drawing.Point(81, 68);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(195, 20);
+            this.nameTextBox.TabIndex = 1;
             // 
             // label2
             // 
@@ -81,12 +81,12 @@ namespace WindowsFormsApp1
             this.label3.Text = "PostalCode:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox2
+            // emailTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(81, 117);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(195, 20);
-            this.textBox2.TabIndex = 4;
+            this.emailTextBox.Location = new System.Drawing.Point(81, 117);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(195, 20);
+            this.emailTextBox.TabIndex = 4;
             // 
             // createButton
             // 
@@ -96,6 +96,7 @@ namespace WindowsFormsApp1
             this.createButton.TabIndex = 5;
             this.createButton.Text = "Aanmaken";
             this.createButton.UseVisualStyleBackColor = true;
+            this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
             // label4
             // 
@@ -108,19 +109,19 @@ namespace WindowsFormsApp1
             this.label4.Text = "City:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox3
+            // postalCodeTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(117, 170);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(195, 20);
-            this.textBox3.TabIndex = 7;
+            this.postalCodeTextBox.Location = new System.Drawing.Point(117, 170);
+            this.postalCodeTextBox.Name = "postalCodeTextBox";
+            this.postalCodeTextBox.Size = new System.Drawing.Size(195, 20);
+            this.postalCodeTextBox.TabIndex = 7;
             // 
-            // textBox4
+            // cityTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(81, 225);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(195, 20);
-            this.textBox4.TabIndex = 8;
+            this.cityTextBox.Location = new System.Drawing.Point(81, 225);
+            this.cityTextBox.Name = "cityTextBox";
+            this.cityTextBox.Size = new System.Drawing.Size(195, 20);
+            this.cityTextBox.TabIndex = 8;
             // 
             // label5
             // 
@@ -138,17 +139,18 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(338, 314);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.cityTextBox);
+            this.Controls.Add(this.postalCodeTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.createButton);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label1);
             this.Name = "createUser";
             this.Text = "createUser";
+            this.Load += new System.EventHandler(this.createUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,14 +159,14 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Button createButton;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox postalCodeTextBox;
+        private System.Windows.Forms.TextBox cityTextBox;
         private System.Windows.Forms.Label label5;
     }
 }

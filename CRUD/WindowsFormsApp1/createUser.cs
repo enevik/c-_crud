@@ -12,9 +12,22 @@ namespace WindowsFormsApp1
 {
     public partial class createUser : Form
     {
+        private DataBaseConnection db = new DataBaseConnection();
+        private userController user = new userController();
+
         public createUser()
         {
             InitializeComponent();
+        }
+
+        private void createUser_Load(object sender, EventArgs e)
+        {
+            db.GetConnection();
+        }
+
+        private void createButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

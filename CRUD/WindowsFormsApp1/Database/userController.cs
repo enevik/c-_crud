@@ -64,20 +64,27 @@ namespace WindowsFormsApp1
         }
 
 
-        public List<User> updateInsert()
+        public string updateInsert(String Name, String Email, String PostalCode, String City)
         {
+            //maakt een connectie database
             SqlConnection con = db.GetConnection();
-            con.Open();
+
+            //insert database
+            SqlCommand query = new SqlCommand("INSERT INTO [User] VALUES ('" + Name + "', '" + Email + "', '" + PostalCode + "','" + City + "')");
 
             //TODO TOEVOEG EEN INSERT MODEL.
             try
             {
+                //er moet een connectie komen met sql connectie anders een fout melding
+                query.Connection = con;
+                //open de con van de databased
+                con.Open();
+                //Voert de query uit!
+                query.ExecuteNonQuery();
 
-                SqlCommand insert = new SqlCommand();
-                insert.ExecuteNonQuery();
-                return null;
+                return query.ToString();
 
-            }catch(SqlException e)
+            } catch (SqlException e)
             {
                 // laat de error zien
                 MessageBox.Show("Error " + e.Message);
@@ -89,6 +96,17 @@ namespace WindowsFormsApp1
                 //sluit de verbinding met database
                 con.Close();
             }
+        }
+
+        //TODO Delete knop maken
+        public String deleteData(String Name) 
+        {
+            //maakt een connectie database
+            SqlConnection con = db.GetConnection();
+            //sql command delete
+            SqlCommand delete = new SqlCommand("DELETE FROM [USER] WHERE ID='" + Name + "'");
+
+            return null;
         }
     }
 }
