@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,19 @@ namespace WindowsFormsApp1
 
         private void createButton_Click(object sender, EventArgs e)
         {
-
+            try 
+            {
+                string insert = user.updateInsert(
+                    this.nameTextBox.Text,
+                    this.emailTextBox.Text,
+                    this.postalCodeTextBox.Text,
+                    this.cityTextBox.Text
+                    );
+            }
+            catch(SqlException error) 
+            {
+                MessageBox.Show("Error " + error);
+            }
         }
     }
 }
