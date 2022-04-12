@@ -14,8 +14,6 @@ namespace WindowsFormsApp1
     {
         private DataBaseConnection db = new DataBaseConnection();
 
-        //TODO show list aanmaken 
-
         //laat alle lijsten zien in userlist.
         public List<User> GetUsers()
         {
@@ -63,6 +61,10 @@ namespace WindowsFormsApp1
             return userList;
         }
 
+        internal void deleteData(object v)
+        {
+            throw new NotImplementedException();
+        }
 
         public string updateInsert(String Name, String Email, String PostalCode, String City)
         {
@@ -72,7 +74,6 @@ namespace WindowsFormsApp1
             //insert database
             SqlCommand query = new SqlCommand("INSERT INTO [User] VALUES ('" + Name + "', '" + Email + "', '" + PostalCode + "','" + City + "')");
 
-            //TODO TOEVOEG EEN INSERT MODEL.
             try
             {
                 //er moet een connectie komen met sql connectie anders een fout melding
@@ -98,13 +99,44 @@ namespace WindowsFormsApp1
             }
         }
 
-        //TODO Delete knop maken
         public String deleteData(String Name) 
         {
             //maakt een connectie database
             SqlConnection con = db.GetConnection();
             //sql command delete
-            SqlCommand delete = new SqlCommand("DELETE FROM [USER] WHERE ID='" + Name + "'");
+            SqlCommand query = new SqlCommand("DELETE FROM [USER] WHERE NAME='" + Name + "'");
+
+            try
+            {
+                //er moet een connectie komen met sql connectie anders een fout melding
+                query.Connection = con;
+                //open de con van de databased
+                con.Open();
+
+                query.ExecuteNonQuery();
+
+                return query.ToString();
+            }
+            catch (SqlException e)
+            {
+                // laat de error zien
+                MessageBox.Show("Error " + e.Message);
+                //daarna stuur die null
+                return null;
+            }
+            finally
+            {
+                //sluit de verbinding met database
+                con.Close();
+            }
+        }
+
+        //TODO UPDATE MAKEN
+        public String updateUser(String Name, String Email, String PostalCode, String City) {
+            //maakt een connectie database
+            SqlConnection con = db.GetConnection();
+
+            SqlCommand query = new SqlCommand();
 
             return null;
         }

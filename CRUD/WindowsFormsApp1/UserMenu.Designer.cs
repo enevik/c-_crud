@@ -33,6 +33,7 @@ namespace WindowsFormsApp1
             this.createButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.refreshButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.userGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,12 +73,24 @@ namespace WindowsFormsApp1
             this.deleteButton.TabIndex = 3;
             this.deleteButton.Text = "Verwijderen";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.Location = new System.Drawing.Point(190, 353);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(75, 23);
+            this.refreshButton.TabIndex = 4;
+            this.refreshButton.Text = "refresh";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // UserMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 388);
+            this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.createButton);
@@ -96,5 +109,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button createButton;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button refreshButton;
     }
 }

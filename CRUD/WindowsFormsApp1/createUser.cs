@@ -36,11 +36,30 @@ namespace WindowsFormsApp1
                     this.postalCodeTextBox.Text,
                     this.cityTextBox.Text
                     );
+
+                MessageBox.Show("Gebruiker aangemaakt");
+
+                this.nameTextBox.Clear();
+                this.emailTextBox.Clear();
+                this.postalCodeTextBox.Clear();
+                this.cityTextBox.Clear();
             }
             catch(SqlException error) 
             {
                 MessageBox.Show("Error " + error);
             }
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            //roep object usermenu
+            UserMenu userMenuShow = new UserMenu();
+            //verstop huidege functie
+            this.Hide();
+            //roep object aan
+            userMenuShow.ShowDialog();
+            //sluit huidge form
+            this.Close();
         }
     }
 }

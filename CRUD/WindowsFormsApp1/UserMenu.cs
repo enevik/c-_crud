@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -48,6 +49,36 @@ namespace WindowsFormsApp1
             updateUser.ShowDialog();
             //sluit form dus MainMenu wordt gesloten, zo dat processor niet overbelast wordt.
             this.Close();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            userController deleteUser = new userController();
+
+            string rowIndex = userGridView.CurrentCell.RowIndex.ToString();
+            int row = Convert.ToInt32(rowIndex);
+
+            try
+            {
+
+                string delete = deleteUser.deleteData(
+                     userGridView.Rows[row].Cells[row].Value.ToString()
+                  );
+
+                MessageBox.Show("Gebruiker verwijdert!");
+
+                userGridView.DataSource = user.GetUsers();
+
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show("Error " + error);
+            }
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            userGridView.DataSource = user.GetUsers();
         }
     }
 }
