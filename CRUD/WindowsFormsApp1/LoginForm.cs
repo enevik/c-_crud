@@ -18,31 +18,40 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
-        private void loginButton_Click(object sender, EventArgs e)
-        {
-            //Verbeteren en in database zetten
-            //een test
-            //TODO
-            SqlConnection con = db.GetConnection();
-            con.Open();
-            SqlDataAdapter query = new SqlDataAdapter();
-
-            DataTable dt = new DataTable();
-            query.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "1") {
-                MessageBox.Show("Werkt");
-            }
-            else
-            {
-                MessageBox.Show("Ongeldig gebruiksnaam of wachtwoord");
-            }
-
-        }
-
         private void LoginForm_Load(object sender, EventArgs e)
         {
             db.GetConnection();
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            //maakt connectie
+            SqlConnection con = db.GetConnection();
+            //voert query uit en kijkt of het match
+            SqlDataAdapter query = new SqlDataAdapter("SELECT COUNT(*) FROM [User] WHERE username='" + emailTextBox.Text + "' AND password='" + passwordTextBox.Text + "'", con);
+            //open data connectie
+            con.Open();
+            //maakt een virtuele data
+            DataTable dt = new DataTable();
+            //vul de data
+            query.Fill(dt);
+
+            if (dt.Rows[0][0].ToString() == "1") {
+                //roept object
+                MainMenu menu = new MainMenu();
+                //verstop huidge
+                this.Hide();
+                //laat nieuw menu zien
+                menu.ShowDialog();
+                //sluit huidige
+                this.Close();
+            }
+            else
+            {
+                //geeft foutmelding
+                MessageBox.Show("Ongeldig gebruiksnaam of wachtwoord");
+            }
+
         }
     }
 }
