@@ -1,0 +1,24 @@
+﻿<Window Background="#2D2D2F" x:Class="Administratie.UserMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Administratie"
+        mc:Ignorable="d"
+        Title="UserMenu" Height="329" Width="705" Loaded="Window_Loaded">
+    <Grid Margin="0,0,63,-6">
+        <DataGrid x:Name="userDataGrid" Margin="0,0,1,0" RenderTransformOrigin="0.5,0.5" Height="238" VerticalAlignment="Top">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.135"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.498"/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+        </DataGrid>
+        <Button x:Name="backButton" Content="Terug" HorizontalAlignment="Right" Margin="547,255,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.58,0.653" Width="95" Click="backButton_Click"/>
+        <Button x:Name="addButton" Content="Toevoegen" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.101,0.052" Width="82" Click="addButton_Click"/>
+
+    </Grid>
+</Window>

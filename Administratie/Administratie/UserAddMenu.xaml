@@ -1,0 +1,28 @@
+﻿<Window Background="#2D2D2F" x:Class="Administratie.UserAddMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Administratie"
+        mc:Ignorable="d"
+        Title="UserAddMenu" Height="304" Width="748" Loaded="Window_Loaded">
+    <Grid Margin="0,0,0,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="517*"/>
+            <ColumnDefinition Width="283*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="label" Content="Email:" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
+        <Label x:Name="label_Copy" Content="Naam:" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20" RenderTransformOrigin="0.566,-0.351"/>
+        <Label x:Name="label_Copy1" Content="Achternaam:" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
+        <Label x:Name="label_Copy2" Content="Telefoonnummer:" HorizontalAlignment="Left" Margin="199,1130,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="label_Copy3" Content="Postcode:" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
+        <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Margin="207,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Margin="207,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261"/>
+        <TextBox x:Name="sureNameTextBox" HorizontalAlignment="Left" Margin="207,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261"/>
+        <TextBox x:Name="postalCodeTextBox" HorizontalAlignment="Left" Margin="207,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262"/>
+        <Button x:Name="createButton" Grid.Column="1" Content="Aanmaken" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" Width="140" Click="createButton_Click"/>
+        <Button x:Name="backButton" Grid.Column="1" Content="Terug" HorizontalAlignment="Center" Margin="0,221,0,0" VerticalAlignment="Top" Width="140" Click="backButton_Click"/>
+        <Label x:Name="label_Copy4" Content="Telefoonnummer:" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
+        <TextBox x:Name="cellPhoneTextBox" HorizontalAlignment="Left" Margin="207,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261"/>
+    </Grid>
+</Window>
