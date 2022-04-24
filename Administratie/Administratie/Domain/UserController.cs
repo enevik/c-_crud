@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Administratie.Domain
 {
-    public class User
+    public class UserController
     {
         //variabele
         private String Email;
@@ -16,8 +16,8 @@ namespace Administratie.Domain
         private String Postalcode;
 
         //Constraint
-        public User(String Email, String Name, String Surename, int PhoneNumber, String Postalcode) {
-            this.Emails = Email;
+        public UserController(String Email, String Name, String Surename, int PhoneNumber, String Postalcode) {
+            this.Email = Email;
             this.Name = Name;
             this.Surename = Surename;
             this.PhoneNumber = PhoneNumber;

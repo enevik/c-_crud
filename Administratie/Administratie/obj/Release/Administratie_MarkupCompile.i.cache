@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\c-_crud\Administratie\Administratie\obj\Debug\
+D:\c-_crud\Administratie\Administratie\obj\Release\
 Administratie
 none
 false
-DEBUG;TRACE
+TRACE
 D:\c-_crud\Administratie\Administratie\App.xaml
-4-1448911672
+4-1903043067
 
-13-1799506
-151937372271
+141795599494
+151397803362
 MainMenu.xaml;MainWindow.xaml;UserAddMenu.xaml;UserMenu.xaml;
 
-False
+True
 

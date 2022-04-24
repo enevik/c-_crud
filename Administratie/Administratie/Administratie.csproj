@@ -79,7 +79,7 @@
     <Compile Include="Database\DatabaseConnection.cs" />
     <Compile Include="Database\UserDatabaseConnection.cs" />
     <Compile Include="Domain\Login.cs" />
-    <Compile Include="Domain\User.cs" />
+    <Compile Include="Domain\UserController.cs" />
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>

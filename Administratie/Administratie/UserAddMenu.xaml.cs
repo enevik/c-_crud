@@ -48,21 +48,24 @@ namespace Administratie
             {
                 if (RegexExpression.checkForEmail(emailTextBox.Text.ToString())) {
                     if (RegexExpression.checkForPostalCode(postalCodeTextBox.Text.ToString())) {
-                        string insert = userdb.InsertData(
+                        if (RegexExpression.checkForCellPhone(cellPhoneTextBox.Text.ToString()))
+                        {
+                            string insert = userdb.InsertData(
                             this.emailTextBox.Text.ToString(),
                             this.nameTextBox.Text.ToString(),
                             this.sureNameTextBox.Text.ToString(),
                             Convert.ToInt32(this.cellPhoneTextBox.Text),
                             this.postalCodeTextBox.Text.ToString()
-                        );
+                            );
 
-                        MessageBox.Show("Gebruiker aangemaakt");
+                            MessageBox.Show("Gebruiker aangemaakt");
 
-                        this.sureNameTextBox.Clear();
-                        this.emailTextBox.Clear();
-                        this.nameTextBox.Clear();
-                        this.cellPhoneTextBox.Clear();
-                        this.postalCodeTextBox.Clear();
+                            this.sureNameTextBox.Clear();
+                            this.emailTextBox.Clear();
+                            this.nameTextBox.Clear();
+                            this.cellPhoneTextBox.Clear();
+                            this.postalCodeTextBox.Clear();
+                        }
                     }
                 }
 

@@ -1,6 +1,8 @@
 ﻿using Administratie.Database;
+using Administratie.Domain;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,6 +49,30 @@ namespace Administratie
             this.Hide();
             menu.Show();
             this.Close();
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            string rowIndex = userDataGrid.CurrentColumn.ToString();
+            int row = Convert.ToInt32(rowIndex);
+            
+            
+            try
+            {
+
+                string delete = userdb.deleteData(
+                        row.ToString()
+                    );
+
+                MessageBox.Show("Gebruiker verwijdert");
+
+                userDataGrid.ItemsSource = userdb.GetUsers();
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error " + error.Message);
+            }
         }
     }
 }

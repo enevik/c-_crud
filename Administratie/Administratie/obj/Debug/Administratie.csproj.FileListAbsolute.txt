@@ -14,9 +14,9 @@ D:\c-_crud\Administratie\Administratie\obj\Debug\Administratie.exe
 D:\c-_crud\Administratie\Administratie\obj\Debug\Administratie.pdb
 D:\c-_crud\Administratie\Administratie\obj\Debug\MainMenu.g.cs
 D:\c-_crud\Administratie\Administratie\obj\Debug\MainMenu.baml
-D:\c-_crud\Administratie\Administratie\obj\Debug\Administratie.csproj.AssemblyReference.cache
-D:\c-_crud\Administratie\Administratie\obj\Debug\Administratie.csproj.SuggestedBindingRedirects.cache
 D:\c-_crud\Administratie\Administratie\obj\Debug\UserMenu.g.cs
 D:\c-_crud\Administratie\Administratie\obj\Debug\UserMenu.baml
 D:\c-_crud\Administratie\Administratie\obj\Debug\UserAddMenu.g.cs
 D:\c-_crud\Administratie\Administratie\obj\Debug\UserAddMenu.baml
+D:\c-_crud\Administratie\Administratie\obj\Debug\Administratie.csproj.AssemblyReference.cache
+D:\c-_crud\Administratie\Administratie\obj\Debug\Administratie.csproj.SuggestedBindingRedirects.cache

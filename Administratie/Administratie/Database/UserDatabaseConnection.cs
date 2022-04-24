@@ -13,9 +13,9 @@ namespace Administratie.Database
     {
         private DatabaseConnection db = new DatabaseConnection();
 
-        public List<User> GetUsers() {
+        public List<UserController> GetUsers() {
 
-            var userList = new List<User>();
+            var userList = new List<UserController>();
 
             SqlConnection con = db.GetConnection();
 
@@ -30,7 +30,7 @@ namespace Administratie.Database
                 SqlDataReader reader = query.ExecuteReader();
 
                 while (reader.Read()) {
-                    User users = new User(
+                    UserController users = new UserController(
                          reader.GetString(0),
                          reader.GetString(1),
                          reader.GetString(2),
@@ -84,7 +84,7 @@ namespace Administratie.Database
 
             SqlConnection con = db.GetConnection();
 
-            SqlCommand query = new SqlCommand("DELETE FROM [USER] WHERE EMAIL='" + Email + "'");
+            SqlCommand query = new SqlCommand("DELETE FROM [User] WHERE Email='" + Email + "'");
 
             try
             {
@@ -109,7 +109,6 @@ namespace Administratie.Database
                 //sluit de verbinding met database
                 con.Close();
             }
-
         }
     }
 }
